@@ -1,5 +1,6 @@
 import React from "react";
-import Image from "next/image";
+import { useRouter } from "next/router";
+
 import {
   HomeIcon,
   BadgeCheckIcon,
@@ -13,23 +14,29 @@ import {
 import HeaderItems from "./HeaderItems";
 
 function Header() {
+  const router = useRouter();
   return (
-    <header className="flex flex-col sm:flex-row m-5 justify-between items-center h-auto">
+    <header className="flex flex-col sm:flex-row mx-5 my-3 justify-between items-center h-auto">
       <div className="flex justify-evenly flex-grow max-w-lg">
-        <HeaderItems title="HOME" Icon={HomeIcon} />
+        <HeaderItems link="/" title="HOME" Icon={HomeIcon} />
         <HeaderItems title="TRENDING" Icon={LightningBoltIcon} />
-        <HeaderItems title="VERFIFIED" Icon={BadgeCheckIcon} />
-        <HeaderItems title="COLLECTIONS" Icon={CollectionIcon} />
+        <HeaderItems title="CERTIFICATIONS" Icon={BadgeCheckIcon} />
+        <HeaderItems
+          link="COLLECTIONS"
+          title="COLLECTIONS"
+          Icon={CollectionIcon}
+        />
         <HeaderItems title="SEARCH" Icon={SearchIcon} />
         <HeaderItems title="ACCOUNT" Icon={UserIcon} />
       </div>
-      <Image
+      {/* <Image
         className="object-contain"
         src="https://links.papareact.com/ua6"
         width={200}
         height={100}
         alt="alt"
-      />
+      /> */}
+      <p className="uppercase text-6xl font-mono font-extrabold">Que T</p>
     </header>
   );
 }

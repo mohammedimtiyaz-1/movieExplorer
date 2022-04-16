@@ -8,14 +8,12 @@ export default function Home({ results }) {
   return (
     <div>
       <Head>
-        <title>Hulu 2.0</title>
-        <meta name="hulu" content=" Hulu clone" />
+        <title>Movie Gyan</title>
+        <meta name="movie gyan" content=" movie gyan - Hulu clone" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Header */}
-
-      <Header></Header>
+      {/* <Header></Header> */}
       {/* Navbar */}
       <Nav />
       {/* Results */}
