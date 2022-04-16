@@ -8,7 +8,7 @@ function HeaderItems({ Icon, title, link }) {
     <div
       className="group flex w-12 flex-col items-center cursor-pointer sm:w-20 hover:text-white"
       onClick={() => {
-        router.push(title.toLowerCase());
+        router.push(title === "HOME" ? "/" : title.toLowerCase());
       }}
     >
       <Icon className="h-8 mb-1 group-hover:animate-bounce" />
