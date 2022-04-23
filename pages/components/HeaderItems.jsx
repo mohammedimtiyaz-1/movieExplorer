@@ -11,7 +11,7 @@ const HeaderItems = ({ Icon, title, menu, setMenu }) => {
       } cursor-pointer group sm:w-20 hover:text-white`}
       onClick={() => {
         setMenu(title === "HOME" ? "/" : title?.toLowerCase());
-        router.push(title === "HOME" ? "/" : title?.toLowerCase());
+        router.push(title === "HOME" ? "/" : "/" + title?.toLowerCase());
       }}
     >
       <Icon className="h-8 mb-1 group-hover:animate-bounce" />

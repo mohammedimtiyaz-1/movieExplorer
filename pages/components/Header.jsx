@@ -28,16 +28,17 @@ function Header() {
           menu={menu === "trending"}
           setMenu={setMenu}
         />
-        <HeaderItems
-          title="CERTIFICATIONS"
-          Icon={BadgeCheckIcon}
-          menu={menu === "certifications"}
-          setMenu={setMenu}
-        />
+
         <HeaderItems
           title="TOP"
           Icon={CollectionIcon}
           menu={menu === "top"}
+          setMenu={setMenu}
+        />
+        <HeaderItems
+          title="CERTIFICATIONS"
+          Icon={BadgeCheckIcon}
+          menu={menu === "certifications"}
           setMenu={setMenu}
         />
         {/* <HeaderItems title="SEARCH" Icon={SearchIcon} />

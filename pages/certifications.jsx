@@ -8,12 +8,12 @@ function Certify({ certList }) {
   // .filter((c) => c);
   return (
     <div className="m-5">
-      <p className="mb-2 font-serif text-2xl">
+      <p className="mb-2 font-serif text-xl md:text-2xl">
         Know the Certificatoin details by CountryWise
       </p>
       <div>
         <select
-          className="w-1/5 p-2 text-white border-2 rounded-lg bg-gradient-to-r from-gray-800 to-gray-400 "
+          className="w-1/2 p-2 text-white border-2 rounded-lg md:w-1/5 bg-gradient-to-r from-gray-800 to-gray-400"
           name="cars"
           id="cars"
           value={selected}
@@ -45,7 +45,9 @@ function Certify({ certList }) {
                       key={cert.certification}
                     >
                       <td className="w-1/5 text-lg font-bold text-center">
-                        {cert.certification}
+                        <p className="flex items-center justify-center">
+                          {cert.certification}
+                        </p>
                       </td>
                       <td>{cert.meaning}</td>
                     </tr>
