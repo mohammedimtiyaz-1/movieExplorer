@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Results from "./components/Results";
 
-export default function Home({ results }) {
+export default function Home({ results, genres }) {
   return (
     <div>
       <Head>
@@ -15,7 +15,7 @@ export default function Home({ results }) {
 
       {/* <Header></Header> */}
       {/* Navbar */}
-      {/* <Nav /> */}
+      <Nav genres={genres} />
       {/* Results */}
       <Results results={results} />
     </div>
@@ -24,13 +24,19 @@ export default function Home({ results }) {
 
 export async function getServerSideProps(ctx) {
   const genre = ctx.query.genre;
+  console.log("genre", genre);
+
   const request = await fetch(
-    `https://api.themoviedb.org/3${
-      requests[genre]?.url || requests.fetchTrending.url
-    }`
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_Key}&with_genres=${genre}`
   ).then((res) => res.json());
 
+  const requestCategories = await fetch(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_Key}&language=en-US`
+  ).then((res) => res.json());
+
+  console.log("gene", requestCategories);
+
   return {
-    props: { results: request.results },
+    props: { results: request.results, genres: requestCategories.genres },
   };
 }

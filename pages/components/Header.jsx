@@ -15,7 +15,7 @@ function Header() {
   const [menu, setMenu] = useState("/");
   return (
     <header className="flex flex-col items-center justify-between h-auto mx-5 my-3 sm:flex-row">
-      <div className="flex items-center flex-grow max-w-lg justify-evenly">
+      <div className="flex items-center flex-grow w-full md:max-w-lg justify-evenly">
         <HeaderItems
           title="HOME"
           Icon={HomeIcon}
@@ -51,7 +51,9 @@ function Header() {
         height={100}
         alt="alt"
       /> */}
-      <p className="font-mono text-6xl font-extrabold uppercase">Movie Gyan</p>
+      <p className="hidden font-mono text-6xl font-extrabold uppercase md:block">
+        Movie Gyan
+      </p>
     </header>
   );
 }

@@ -8,12 +8,12 @@ function Certify({ certList }) {
   // .filter((c) => c);
   return (
     <div className="m-5">
-      <p className="mb-2 font-serif text-xl md:text-2xl">
-        Know the Certificatoin details by CountryWise
+      <p className="mb-2 font-serif text-2xl font-bold text-center md:text-2xl">
+        Movie Certification Clause
       </p>
       <div>
         <select
-          className="w-1/2 p-2 text-white border-2 rounded-lg md:w-1/5 bg-gradient-to-r from-gray-800 to-gray-400"
+          className="w-1/2 p-2 font-mono text-lg font-bold text-green-600 bg-[#06202A] border-2 rounded-lg md:w-1/5"
           name="cars"
           id="cars"
           value={selected}
@@ -23,7 +23,7 @@ function Certify({ certList }) {
             countries.map((c) => (
               <option
                 key={c}
-                className="w-1/5 text-black border-2 rounded-lg bg-gradient-to-r from-gray-500 to-gray-100"
+                className="w-1/5 text-green-600 border-2 rounded-lg "
                 value={c}
               >
                 {cc[c]}
@@ -41,7 +41,7 @@ function Certify({ certList }) {
                 {certList[selected]?.length > 0 &&
                   certList[selected].map((cert) => (
                     <tr
-                      className="text-[1rem] font-mono my-8 pt-4 font-light text-left border-t-[1px] border-gray-500"
+                      className="text-[1rem] font-mono my-8 pt-4 font-light  text-left border-t-[1px] border-gray-500"
                       key={cert.certification}
                     >
                       <td className="w-1/5 text-lg font-bold text-center">
