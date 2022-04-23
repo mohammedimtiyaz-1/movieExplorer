@@ -15,7 +15,7 @@ export default function Home({ results }) {
 
       {/* <Header></Header> */}
       {/* Navbar */}
-      <Nav />
+      {/* <Nav /> */}
       {/* Results */}
       <Results results={results} />
     </div>

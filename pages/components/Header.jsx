@@ -1,29 +1,47 @@
 import React from "react";
-import { useRouter } from "next/router";
 
 import {
   HomeIcon,
   BadgeCheckIcon,
   CollectionIcon,
   LightningBoltIcon,
-  SearchIcony,
   UserIcon,
-  ColorSwatchIcon,
   SearchIcon,
 } from "@heroicons/react/solid";
 import HeaderItems from "./HeaderItems";
+import { useState } from "react";
 
 function Header() {
-  const router = useRouter();
+  const [menu, setMenu] = useState("/");
   return (
-    <header className="flex flex-col sm:flex-row mx-5 my-3 justify-between items-center h-auto">
-      <div className="flex items-center justify-evenly flex-grow max-w-lg">
-        <HeaderItems title="HOME" Icon={HomeIcon} />
-        <HeaderItems title="TRENDING" Icon={LightningBoltIcon} />
-        <HeaderItems title="CERTIFICATIONS" Icon={BadgeCheckIcon} />
-        <HeaderItems title="COLLECTIONS" Icon={CollectionIcon} />
-        <HeaderItems title="SEARCH" Icon={SearchIcon} />
-        <HeaderItems title="ACCOUNT" Icon={UserIcon} />
+    <header className="flex flex-col items-center justify-between h-auto mx-5 my-3 sm:flex-row">
+      <div className="flex items-center flex-grow max-w-lg justify-evenly">
+        <HeaderItems
+          title="HOME"
+          Icon={HomeIcon}
+          menu={menu === "/"}
+          setMenu={setMenu}
+        />
+        <HeaderItems
+          title="TRENDING"
+          Icon={LightningBoltIcon}
+          menu={menu === "trending"}
+          setMenu={setMenu}
+        />
+        <HeaderItems
+          title="CERTIFICATIONS"
+          Icon={BadgeCheckIcon}
+          menu={menu === "certifications"}
+          setMenu={setMenu}
+        />
+        <HeaderItems
+          title="TOP"
+          Icon={CollectionIcon}
+          menu={menu === "top"}
+          setMenu={setMenu}
+        />
+        {/* <HeaderItems title="SEARCH" Icon={SearchIcon} />
+        <HeaderItems title="ACCOUNT" Icon={UserIcon} />  */}
       </div>
       {/* <Image
         className="object-contain"
@@ -32,7 +50,7 @@ function Header() {
         height={100}
         alt="alt"
       /> */}
-      <p className="uppercase text-6xl font-mono font-extrabold">Que T</p>
+      <p className="font-mono text-6xl font-extrabold uppercase">Movie Gyan</p>
     </header>
   );
 }
