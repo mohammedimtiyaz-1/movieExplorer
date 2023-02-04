@@ -14,6 +14,7 @@ export async function getServerSideProps(ctx) {
   return {
     props: { results: res.results },
   };
+  the;
 }
 
 export default trending;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-const HeaderItems = ({ Icon, title, menu, setMenu }) => {
+const HeaderItems = ({ Icon, title, menu, setMenu, children }) => {
   const router = useRouter();
 
   return (
@@ -10,17 +10,18 @@ const HeaderItems = ({ Icon, title, menu, setMenu }) => {
         menu ? "text-green-600" : ""
       } cursor-pointer group sm:w-20 hover:text-white`}
       onClick={() => {
-        setMenu(title === "HOME" ? "/" : title?.toLowerCase());
-        router.push(title === "HOME" ? "/" : "/" + title?.toLowerCase());
+        const r = title === "HOME" ? "/" : title?.toLowerCase();
+        setMenu(r);
+        router.push(r);
       }}
     >
-      <Icon className="h-8 mb-1 group-hover:animate-bounce" />
+      <div className="h-8 mb-1 group-hover:animate-bounce">{children}</div>
       <p
         className={` ${
-          menu ? "opacity-100" : "opacity-0"
+          true ? "opacity-100" : "opacity-0"
         } tracking-widest group-hover:opacity-100`}
       >
-        {title && title}
+        {(title && title) || ""}
       </p>
     </div>
   );

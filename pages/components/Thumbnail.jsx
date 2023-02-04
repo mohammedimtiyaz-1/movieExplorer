@@ -1,12 +1,12 @@
 import React, { forwardRef } from "react";
 import ReactStars from "react-rating-stars-component";
 import Image from "next/image";
-import Router from "next/router";
+import { useRouter } from "next/router";
 
 function Thumbnail({ result }, ref) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
-  const router = Router.useRouter();
-  console.log(router);
+  const router = useRouter();
+  // console.log(router);
   // console.log(`${moviePage ? `${result?.id}` : `movie\\${result?.id}`}`);
 
   return (

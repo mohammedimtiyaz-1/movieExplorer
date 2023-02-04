@@ -70,19 +70,18 @@ function movie({ movieDetails, results }) {
 
 const getServerSideProps = async (ctx) => {
   const movieId = ctx.query.movieId;
-  // console.log(movieId);
 
   const responseMovie = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}&language=en-US`
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_Key}&language=en-US`
   ).then((res) => res.json());
   const responseMovies = await fetch(
-    `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${process.env.API_KEY}&language=en-US`
+    `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${process.env.API_Key}&language=en-US`
   ).then((res) => res.json());
   // console.log(responseMovies);
 
-  const ret = responseMovies.results.filter((m) => !m.adult);
+  const ret = responseMovies?.results?.filter((m) => !m.adult);
   return {
-    props: { movieDetails: responseMovie, results: ret },
+    props: { movieDetails: responseMovie, results: ret || null },
   };
 };
 export { getServerSideProps };

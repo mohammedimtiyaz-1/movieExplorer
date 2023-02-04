@@ -21,36 +21,36 @@ function Header() {
           Icon={HomeIcon}
           menu={menu === "/"}
           setMenu={setMenu}
-        />
+        >
+          <HomeIcon />
+        </HeaderItems>
         <HeaderItems
           title="TRENDING"
           Icon={LightningBoltIcon}
           menu={menu === "trending"}
           setMenu={setMenu}
-        />
+        >
+          <LightningBoltIcon />
+        </HeaderItems>
 
         <HeaderItems
           title="TOP"
           Icon={CollectionIcon}
           menu={menu === "top"}
           setMenu={setMenu}
-        />
+        >
+          <CollectionIcon />
+        </HeaderItems>
         <HeaderItems
           title="CERTIFICATIONS"
           Icon={BadgeCheckIcon}
           menu={menu === "certifications"}
           setMenu={setMenu}
-        />
-        {/* <HeaderItems title="SEARCH" Icon={SearchIcon} />
-        <HeaderItems title="ACCOUNT" Icon={UserIcon} />  */}
+        >
+          <BadgeCheckIcon />
+        </HeaderItems>
       </div>
-      {/* <Image
-        className="object-contain"
-        src="https://links.papareact.com/ua6"
-        width={200}
-        height={100}
-        alt="alt"
-      /> */}
+
       <p className="hidden font-mono text-6xl font-extrabold uppercase md:block">
         Movie Gyan
       </p>

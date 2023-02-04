@@ -24,7 +24,7 @@ export default function Home({ results, genres }) {
 
 export async function getServerSideProps(ctx) {
   const genre = ctx.query.genre;
-  console.log("genre", genre);
+  // console.log("genre", genre);
 
   const request = await fetch(
     `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_Key}&with_genres=${genre}`
@@ -34,7 +34,7 @@ export async function getServerSideProps(ctx) {
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_Key}&language=en-US`
   ).then((res) => res.json());
 
-  console.log("gene", requestCategories);
+  //  console.log("gene", requestCategories);
 
   return {
     props: { results: request.results, genres: requestCategories.genres },

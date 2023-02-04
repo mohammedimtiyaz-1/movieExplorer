@@ -63,7 +63,7 @@ function Certify({ certList }) {
 
 export async function getServerSideProps(ctx) {
   const movCerts = await fetch(
-    `https://api.themoviedb.org/3/certification/movie/list?api_key=${process.env.API_KEY}`
+    `https://api.themoviedb.org/3/certification/movie/list?api_key=${process.env.API_Key}`
   );
   const res = await movCerts.json();
   // console.log(res);
