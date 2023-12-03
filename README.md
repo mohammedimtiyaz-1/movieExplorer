@@ -7,7 +7,7 @@
 <img src="movie_gyan.gif" alt="Animated gif" height="382px">
 </p>
 
-<p>This Website is a simple search dashboard to explore the universities based on the important criterion. This is useful for the student who aspires to study abroad</p>
+<p>This Website is a simple search dashboard to explore the Movie & its Details based on the user's interest. It info on Certification of movies in different country</p>
 
 
 # Features
